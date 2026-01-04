@@ -3,31 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Aligner</title>
+    <title>Text Aligner Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Text Aligner</h1>
+        <h1>Text Aligner Pro</h1>
         
-        <div class="input-section">
-            <label for="inputText">Texto original:</label>
-            <textarea id="inputText" placeholder="Pega aquí tu texto con saltos de línea..."></textarea>
-            <div class="stats" id="inputStats">Caracteres: 0 | Palabras: 0 | Líneas: 0</div>
+        <!-- Sección de carga -->
+        <div class="upload-section" id="uploadArea">
+            <label>📤 Arrastra un archivo .txt aquí o haz clic para seleccionar</label>
+            <input type="file" id="fileInput" accept=".txt" hidden>
         </div>
 
-        <button id="processBtn">▶️ Convertir a una línea</button>
+        <div class="input-section">
+            <label for="inputText">O pega tu texto:</label>
+            <textarea id="inputText" placeholder="Texto con saltos de línea..."></textarea>
+            <div class="stats" id="inputStats">Caracteres: 0 | Palabras: 0 | Líneas: 0 | Páginas: 0</div>
+        </div>
+
+        <!-- Opciones avanzadas -->
+        <details class="options">
+            <summary>⚙️ Opciones de procesamiento</summary>
+            <label><input type="checkbox" id="uppercase" value="uppercase"> Convertir a MAYÚSCULAS</label>
+            <label><input type="checkbox" id="lowercase" value="lowercase"> Convertir a minúsculas</label>
+            <label><input type="checkbox" id="removeSpecial" value="removeSpecial"> Eliminar caracteres especiales</label>
+            <label><input type="checkbox" id="removeNumbers" value="removeNumbers"> Eliminar números</label>
+        </details>
+
+        <button id="processBtn">▶️ Procesar texto</button>
 
         <div class="output-section">
-            <label for="outputText">Texto procesado:</label>
-            <textarea id="outputText" readonly placeholder="El texto en una sola línea aparecerá aquí..."></textarea>
-            <div class="stats" id="outputStats">Caracteres: 0 | Palabras: 0</div>
+            <label for="outputText">Resultado:</label>
+            <textarea id="outputText" readonly></textarea>
+            <div class="stats" id="outputStats">Caracteres: 0 | Palabras: 0 | Tamaño: 0 KB</div>
         </div>
 
         <div class="actions">
-            <button id="copyBtn" disabled>📋 Copiar al portapapeles</button>
-            <button id="clearBtn">🗑️ Limpiar todo</button>
+            <button id="copyBtn" disabled>📋 Copiar</button>
+            <button id="downloadBtn" disabled>📥 Descargar archivo</button>
+            <button id="clearBtn">🗑️ Limpiar</button>
         </div>
+        
+        <div class="improvement-stats" id="improvementStats"></div>
     </div>
 
     <script src="script.js"></script>
