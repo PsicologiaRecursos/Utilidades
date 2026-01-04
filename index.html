@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Aligner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Aligner</h1>
+        
+        <div class="input-section">
+            <label for="inputText">Texto original:</label>
+            <textarea id="inputText" placeholder="Pega aquí tu texto con saltos de línea..."></textarea>
+            <div class="stats" id="inputStats">Caracteres: 0 | Palabras: 0 | Líneas: 0</div>
+        </div>
+
+        <button id="processBtn">▶️ Convertir a una línea</button>
+
+        <div class="output-section">
+            <label for="outputText">Texto procesado:</label>
+            <textarea id="outputText" readonly placeholder="El texto en una sola línea aparecerá aquí..."></textarea>
+            <div class="stats" id="outputStats">Caracteres: 0 | Palabras: 0</div>
+        </div>
+
+        <div class="actions">
+            <button id="copyBtn" disabled>📋 Copiar al portapapeles</button>
+            <button id="clearBtn">🗑️ Limpiar todo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
